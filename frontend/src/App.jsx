@@ -4,7 +4,7 @@ import Login from "../src/pages/Login";
 import Home from "../src/pages/Home";
 function App() {
   return (
-    <div>
+    <div >
       <Routes>
         <Route path="/" element={<Home/>}/>
         <Route path="/login" element={<Login />}/>

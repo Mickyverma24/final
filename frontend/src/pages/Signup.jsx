@@ -81,11 +81,11 @@ const Signup = () => {
               />
             </div>
             <Link
-            to="/login"
-            className="text-sm  hover:underline hover:text-blue-600 mt-2 inline-block"
-          >
-            Already have an account?
-          </Link>
+              to="/login"
+              className="text-sm  hover:underline hover:text-blue-600 mt-2 inline-block"
+            >
+              Already have an account?
+            </Link>
 
             <div>
               <button type="submit" className="btn btn-block btn-sm mt-2">
