@@ -1,22 +1,23 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import useSignUp from "../hooks/useSignUp.js";
 const Signup = () => {
   const [inputs, setInputs] = useState({
     fullName: "",
     username: "",
-    email: "",
     password: "",
     confirmPassword: "",
   });
-  const handleSubmit = (e) => {
+  const {loading,signup} = useSignUp();
+  const handleSubmit =async (e) => {
     e.preventDefault();
-    console.log(inputs);
+    await signup(inputs)
   };
   const handleChange = (e) => {
     let newInputs = { ...inputs };
     newInputs[e.target.name] = e.target.value;
     setInputs(newInputs);
-  };
+  }; 
 
   return (
     <div className="p-4 h-screen flex items-center justify-center">
@@ -24,7 +25,7 @@ const Signup = () => {
         <div className="p-6 rounded-lg shadow-md bg-clip-padding backdrop-filter backdrop-blur-lg bg-opacity-0">
           <h1 className="text-3xl font-semibold text-center text-white-700">
             SignUp
-            <span className="text-blue-500"> L.M.O.</span>
+            <span className="text-black"> L.M.O.</span>
           </h1>
 
           <form onSubmit={handleSubmit}>
@@ -89,8 +90,7 @@ const Signup = () => {
 
             <div>
               <button type="submit" className="btn btn-block btn-sm mt-2">
-                {/* {loading?<span className="loading loading-spinner">Sign Up</span>:"Sign Up"} */}
-                Sign Up
+                {loading?<span className="loading loading-spinner">Sign Up</span>:"Sign Up"}
               </button>
             </div>
           </form>

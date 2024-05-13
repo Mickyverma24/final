@@ -13,6 +13,7 @@ const ImageScanner = () => {
     <div>
       <input type="file" accept="image/*" capture="camera" onChange={handleImageUpload} />
       {imageUrl && <img src={imageUrl} alt="Captured" />}
+            
     </div>
   );
 };
