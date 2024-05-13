@@ -3,6 +3,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 import connectionWithDB from "./db/connectToMongoDB.js";
 import authRoutes from "./routes/auth.routes.js";
+import quizRoutes from "./routes/quiz.routes.js";
 dotenv.config();
 
 const app = express();
@@ -15,7 +16,7 @@ app.use(cors());
 // connection with database
 
 app.use("/api/user/auth", authRoutes);
-
+app.use("/api/user/quiz", quizRoutes);
 app.listen(port, () => {
   connectionWithDB();
   console.log(`Server is running on ${port}`);
