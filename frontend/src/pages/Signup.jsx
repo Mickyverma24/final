@@ -18,7 +18,7 @@ const Signup = () => {
     newInputs[e.target.name] = e.target.value;
     setInputs(newInputs);
   }; 
-
+  
   return (
     <div className="p-4 h-screen flex items-center justify-center">
       <div className="flex flex-col items-center justify-center min-w-96 mx-auto">

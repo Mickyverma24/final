@@ -1,6 +1,6 @@
-import { Student } from "../../models/student.model.js";
+import  {Student}  from "../../models/student.model.js";
 
-const retrieveAllStudents = async (req, res) => {
+ const retrieveAllStudents = async (req, res) => {
   try {
     // Extract the user from the request object
     const { quizId } = req.body;

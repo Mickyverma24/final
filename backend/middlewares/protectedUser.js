@@ -4,6 +4,8 @@ export const protectedUser =async (req,res,next) => {
   try {
     // taking out token from cookies.jwt
     const token = req.cookies.jwt;
+    console.log(req.cookies)
+    console.log(token)
     if (!token){
         return res.status(401).json({error : "Unauthorized - No token found."});
     }
