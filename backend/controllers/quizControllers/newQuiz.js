@@ -2,13 +2,14 @@ import Quiz from "../../models/quiz.model.js";
 
 export const newQuiz = async (req, res) => {
   const { quizName, answerKey } = req.body;
-
+  const user = req.user;
+  const createdByUserId = user._id;
   if (!quizName || !answerKey || !Array.isArray(answerKey)) {
     return res.status(400).json({
       message: "Invalid request. Quiz name and answer key array are required.",
     });
   }
-
+  
   if (answerKey.length < 5) {
     return res
       .status(400)
@@ -24,6 +25,7 @@ export const newQuiz = async (req, res) => {
     const newQuiz = new Quiz({
       quizName,
       answerKey, // Assuming answerKey is an array of objects with questionNumber and answer
+      createdBy : createdByUserId
     });
 
     await newQuiz.save();

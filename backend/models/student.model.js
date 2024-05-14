@@ -9,7 +9,7 @@ const studentSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  respectiveQuiz: {
+  respectiveQuizId: {
     type: mongoose.Schema.Types.ObjectId,
     ref: "Quiz",
   },

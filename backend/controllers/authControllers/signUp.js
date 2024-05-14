@@ -1,6 +1,6 @@
 import User from "../../models/user.model.js";
 import bcrypt from "bcryptjs";
-import { generateTokenAndSave } from "../../utils/jwtToken.js";
+import  generateTokenAndSave  from "../../utils/jwtToken.js";
 export const signUp = async (req, res) => {
   const { fullName, username, password, confirmPassword } = req.body;
   if (!username || !fullName || !password || !confirmPassword) {
