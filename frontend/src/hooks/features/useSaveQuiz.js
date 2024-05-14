@@ -9,7 +9,10 @@ const useSaveQuiz = () => {
     try {
       const res = await fetch("http://localhost:5000/api/user/quiz/newquiz", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          authorization: localStorage.getItem("token"),
+        },
         body: JSON.stringify({
           quizName: "jabara",
           answerKey: [
@@ -19,6 +22,18 @@ const useSaveQuiz = () => {
             },
             {
               questionNumber: 2,
+              answer: "b",
+            },
+            {
+              questionNumber: 3,
+              answer: "b",
+            },
+            {
+              questionNumber: 4,
+              answer: "b",
+            },
+            {
+              questionNumber: 5,
               answer: "b",
             },
           ],
