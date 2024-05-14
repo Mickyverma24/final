@@ -19,6 +19,7 @@ const useLogout = () => {
       }
       // remove user to local storage
       localStorage.removeItem("user");
+      localStorage.removeItem("token");
       // make context hook to stay it logged in
       setAuthUser(null);
     } catch (error) {

@@ -1,12 +1,12 @@
 import User from "../../models/user.model.js";
 import bcrypt from "bcryptjs";
-import  generateTokenAndSave  from "../../utils/jwtToken.js";
+import generateTokenAndSave from "../../utils/jwtToken.js";
 export const signUp = async (req, res) => {
   const { fullName, username, password, confirmPassword } = req.body;
   if (!username || !fullName || !password || !confirmPassword) {
     return res.status(400).send({ message: "All feilds are requied..." });
   }
-  if (password.length<6){
+  if (password.length < 6) {
     return res
       .status(400)
       .send({ message: "Password must be atleast 6 characters" });
@@ -29,11 +29,12 @@ export const signUp = async (req, res) => {
       password: hashedPassword,
     });
     await newUser.save();
-    generateTokenAndSave(newUser._id, res);
+    const token = generateTokenAndSave(newUser._id, res);
     res.status(200).send({
       Id: newUser._id,
       fullName: newUser.fullName,
       username: newUser.username,
+      token,
     });
   } catch (error) {
     console.log("Error while Signing In....", error);

@@ -23,6 +23,7 @@ const useLogin = () => {
       }
       // save user to local stroage
       localStorage.setItem("user", JSON.stringify(data));
+      localStorage.setItem("token", data?.token);
       // make context hook to stay it logged in
       setAuthUser(data);
     } catch (error) {

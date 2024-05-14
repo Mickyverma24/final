@@ -1,6 +1,6 @@
 import Quiz from "../../models/quiz.model.js";
 
- const retrieveAllQuiz = async (req, res) => {
+const retrieveAllQuiz = async (req, res) => {
   try {
     // Extract the user from the request object
     const user = req.user;
@@ -11,6 +11,7 @@ import Quiz from "../../models/quiz.model.js";
     }
 
     // Find all quizzes created by the user
+    console.log(user);
     const allQuizzesForUser = await Quiz.find({ createdBy: user._id });
     // Return the found quizzes
     return res.status(200).send(allQuizzesForUser);
