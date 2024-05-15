@@ -1,11 +1,11 @@
 import toast from "react-hot-toast";
 
-const useRetriveAllStudents = () => {
-  const retriveStudents = async (quizId) => {
+const useRetrieveAllStudents = () => {
+  const retrieveStudents = async (quizId) => {
     try {
-      if (!quizId) throw new Error("Quiz ID is required."); // Fixed error message
+      if (!quizId) throw new Error("Quiz ID is required.");
       const res = await fetch(
-        "http://localhost:5000/api/user/quiz/retriveAllStudent",
+        "http://localhost:5000/api/user/quiz/retrieveAllStudent",
         {
           method: "POST",
           headers: {
@@ -13,7 +13,7 @@ const useRetriveAllStudents = () => {
             authorization: localStorage.getItem("token"),
           },
           body: JSON.stringify({
-            quizId: "66431003e26b0ebac468d1d0",
+            quizId,
           }),
         }
       );
@@ -22,10 +22,12 @@ const useRetriveAllStudents = () => {
         throw new Error(data.error);
       }
       console.log(data);
+      return data;
     } catch (error) {
       toast.error(error.message);
     }
   };
-  return { retriveStudents };
+  return { retrieveStudents };
 };
-export default useRetriveAllStudents;
+
+export default useRetrieveAllStudents;

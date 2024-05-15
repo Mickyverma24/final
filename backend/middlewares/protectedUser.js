@@ -3,6 +3,7 @@ import User from "../models/user.model.js";
 export const protectedUser = async (req, res, next) => {
   try {
     // taking out token from cookies.jwt
+    
     const token = req.headers.authorization;
     console.log("logged in with token: ", token);
     if (!token) {

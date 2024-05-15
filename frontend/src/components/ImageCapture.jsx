@@ -4,17 +4,8 @@ import useRetriveAllStudents from "../hooks/features/useRetriveAllStudents";
 import useSaveQuiz from "../hooks/features/useSaveQuiz";
 
 const ImageScanner = () => {
-  const useuserquizes = useUserQuizs();
-  const { retriveStudents } = useRetriveAllStudents();
   const { saveNewQuiz } = useSaveQuiz();
   const [image, setImage] = useState({ preview: "", data: "" });
-  const handleGetAllQuizes = async () => {
-    await useuserquizes();
-  };
-  const quizId = "66431003e26b0ebac468d1d0";
-  const handleGetAllStudents = async () => {
-    await retriveStudents(quizId);
-  };
   const handleSaveQuiz = async () => {
     await saveNewQuiz();
   };
@@ -41,12 +32,6 @@ const ImageScanner = () => {
   };
   return (
     <div>
-      <button className="p-2 m-2 rounded-md " onClick={handleGetAllQuizes}>
-        get all quizes
-      </button>
-      <button className="p-2 m-2 rounded-md " onClick={handleGetAllStudents}>
-        get all Students
-      </button>
       <button className="p-2 m-2 rounded-md " onClick={handleSaveQuiz}>
         save answer key
       </button>
