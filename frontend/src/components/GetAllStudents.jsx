@@ -20,6 +20,7 @@ const GetAllStudents = () => {
   }
   return (
     <div>
+        
       <button className="p-2 m-2 rounded-md " onClick={handleShowStudents}>
         show all students
       </button>

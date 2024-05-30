@@ -11,7 +11,7 @@ const router = express.Router();
 router.post("/newquiz", protectedUser, newQuiz);
 router.post("/student/:id", protectedUser, evaluatedUser);
 router.get("/retriveAllQuiz", protectedUser, retrieveAllQuiz);
-router.post("/retriveAllStudent", protectedUser, retrieveAllStudents);
+router.post("/retriveAllStudents", protectedUser, retrieveAllStudents);
 router.get("/getUserDetails", protectedUser, getUserDetails);
 
 export default router;

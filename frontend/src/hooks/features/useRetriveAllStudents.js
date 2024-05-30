@@ -5,7 +5,7 @@ const useRetrieveAllStudents = () => {
     try {
       if (!quizId) throw new Error("Quiz ID is required.");
       const res = await fetch(
-        "http://localhost:5000/api/user/quiz/retrieveAllStudent",
+        "http://localhost:5000/api/user/quiz/retriveAllStudents",
         {
           method: "POST",
           headers: {
