@@ -1,25 +1,15 @@
-import React from 'react'
-import ImageScanner from '../components/ImageCapture'
-import LogOutButton from '../components/Logout'
-import { useAuthContext } from '../contexts/AuthContext'
-import Tabel from '../components/Tabel'
-import GetAllQuiz from '../components/GetAllQuiz'
-import GetAllStudents from '../components/GetAllStudents'
+import React from "react";
+import { useAuthContext } from "../contexts/AuthContext";
+import Sidebar from "../components/Sidebar/Sidebar";
+import DashBoard from "../components/dashBoardContainer/DashBoard";
 const Home = () => {
-  const {authUser,setAuthUser } = useAuthContext();
+  const { authUser, setAuthUser } = useAuthContext();
   return (
-    <div>
-
-      Welcome ...{authUser.fullName}
-      <GetAllQuiz/>
-      <GetAllStudents/>
-      <ImageScanner/>
-      {/* make answer key */}
-      
-      {/* evaluate quiz */}
-      <LogOutButton/>
+      <div className="bg-white text-black h-screen flex">
+        <Sidebar />
+        <DashBoard/>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

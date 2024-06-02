@@ -7,10 +7,10 @@ const LogOutButton = () => {
     await logout();
   }
   return (
-    <div className="mt-auto">
+    <div className="absolute bottom-0 w-full mb-4">
       {!loading ? (
         <TbLogout2
-          className="w-6 h-6 cursor-pointer text-black"
+          className="w-10 h-16 cursor-pointer text-white"
           onClick={handleClick}
         />
       ) : (

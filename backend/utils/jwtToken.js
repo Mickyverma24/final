@@ -5,11 +5,6 @@ const generateTokenAndSave = (userId, res) => {
     expiresIn: "15d",
   });
   console.log(token);
-  res.cookie("jwt", token, {
-    maxAge: 15 * 24 * 60 * 60 * 1000,
-    httpOnly: true,
-    sameSite: "strict",
-  });
   return token;
 };
 export default generateTokenAndSave;

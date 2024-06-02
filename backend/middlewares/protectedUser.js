@@ -2,7 +2,7 @@ import jwt from "jsonwebtoken";
 import User from "../models/user.model.js";
 export const protectedUser = async (req, res, next) => {
   try {
-    // taking out token from cookies.jwt
+    // taking out token from local stroage something stuff is happening here
     
     const token = req.headers.authorization;
     console.log("logged in with token: ", token);
